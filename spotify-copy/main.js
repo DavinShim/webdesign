@@ -91,6 +91,8 @@ document.querySelector('#search').onkeyup = function (ev) {
     if (ev.keyCode === 13) {
 
         ev.preventDefault();
+        document.querySelector('#tracks').innerHTML = ''
+        document.querySelector('#albums').innerHTML = ''
         search();
     }
 }

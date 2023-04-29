@@ -322,7 +322,7 @@ function moveController(ev) {
     console.log(ev.code);
     if (ev.code == 'Space') {
         console.log('up arrow!');
-        if(player_jump_speed == 0)
+        if(player_jump_speed === 0 && player_acceleration === 0)
         {
         player_acceleration = 4;
         player_jump_speed = 40

@@ -134,19 +134,27 @@ function drawLandscapeObject(treeX, treeY, treeSize){
 
 function drawCreature(positionX, positionY, size, primaryColor, secondaryColor) {
     fill(primaryColor);
-    rect(positionX, positionY, size, size); //body
+    rect(positionX, positionY, size*.25, size*.25, 5); //body
 
-    fill(secondaryColor);  //hand1
-    circle(positionX+1.25*size, positionY+.5*size, size*.5);
+    //fill(secondaryColor);  //hand1
+    //circle(positionX+1.25*size, positionY+.5*size, size*.5);
+    fill(secondaryColor)
+    rect(positionX- size /3, positionY + size*.25, size, size * .25)
 
-    fill(secondaryColor); //hand2
-    circle(positionX, positionY+.5*size, size*.5);
+    fill('white')
+    rect(positionX- size /3, positionY, size * .25, size * .25)
+
+    fill('white')
+    rect(positionX+ size /2, positionY, size * .25, size * .25)
+
+   // fill(secondaryColor); //hand2
+    //circle(positionX, positionY+.5*size, size*.5);
     
-    fill('black'); //eye1
-    circle(positionX+size*11/12, positionY+size/3, size/6);
+    //fill('black'); //eye1
+    //circle(positionX+size*11/12, positionY+size/3, size/6);
 
-    fill('black'); //eye2
-    circle(positionX+size*7/12, positionY+size/3, size/6);
+    //fill('black'); //eye2
+    //circle(positionX+size*7/12, positionY+size/3, size/6);
 }
 
 function mouseClicked() {

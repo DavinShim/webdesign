@@ -164,7 +164,7 @@ function mouseClicked() {
 const canvasWidth = window.innerWidth;
 const canvasHeight = window.innerHeight; 
 
-let x = canvasWidth / 2
+let x = 0
 let y = (canvasHeight / 2)*1.2
 let width = 100
 let player_jump_speed = 0
@@ -291,11 +291,11 @@ function draw(){
         x = 0
         level ++
     }
-    if(level >= coins_collection.length && coin_counter > 6)
+    if(level >= coins_collection.length && coin_counter > 28)
     {
-        document.querySelector("body").style.background="url('IMG_6341.jpg')";
+        document.querySelector("body").style.background="url('https://nypost.com/wp-content/uploads/sites/2/2015/08/tv_harvey1a.jpg?quality=75&amp;strip=all&amp;w=744')";
     }
-    else if(level >= coins_collection.length && coin_counter <= 6)
+    else if(level >= coins_collection.length && coin_counter <= 28)
      {
         document.querySelector("body").style.background="url('https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210204102100-steve-harvey-family-feud.jpg')";
      }

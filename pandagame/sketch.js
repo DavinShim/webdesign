@@ -261,9 +261,9 @@ function draw(){
     for(i = 0; i < coins_collection[level].length; i++)
     {
         coins(coins_collection[level][i].x, coins_collection[level][i].y)
-        if(Math.abs(x - coins_collection[level][i].x) < 75 && Math.abs(y - coins_collection[level][i].y) < 125)
+        if(coins_collection[level][i].x- x < 75 && coins_collection[level][i].x- x >= 0 && y - coins_collection[level][i].y < 125 &&  y - coins_collection[level][i].y >= 0)
         {
-            coins_collection[level].splice(i, i)
+            coins_collection[level].splice(i, 1)
             coin_counter ++
         }
     }

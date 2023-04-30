@@ -184,12 +184,28 @@ const t1 = {
     color: 'hotpink'
 };
 
-let coins_collection = [[{x: 1410, y: 188}, {x: 875, y: 348}, {x: 655, y: 125}, {x: 293, y: 303}, {x: 520, y: 224}],
+/*let coins_collection = [[{x: 1410, y: 188}, {x: 875, y: 348}, {x: 655, y: 125}, {x: 293, y: 303}, {x: 520, y: 224}],
 [{x: 721, y: 245}, {x: 184, y: 256}, {x: 1514, y: 356}, {x: 129, y: 379}, {x: 1128, y: 79}, {x: 370, y: 69}, {x: 1056, y: 192}],
 [{x: 1503, y: 70}, {x: 743, y: 65}, {x: 1356, y: 439}, {x: 131, y: 43}, {x: 1478, y: 127}, {x: 1392, y: 161}, {x: 1231, y: 184}],
 [{x: 1145, y: 42}, {x: 961, y: 5}, {x: 628, y: 362}, {x: 316, y: 54}, {x: 1177, y: 414}, {x: 653, y: 461}, {x: 1479, y: 256}],
 [{x: 548, y: 318}, {x: 1324, y: 67}, {x: 438, y: 73}, {x: 626, y: 234}, {x: 675, y: 82}, {x: 959, y: 474}, {x: 1382, y: 51}]
-                        ]
+                        ]*/
+
+let coins_collection = [[],
+[],
+[],
+[],
+[]                       ]
+for(let i = 0; i < coins_collection.length; i++)
+{
+    for(let j = 0; j < 7; j++)
+    {
+        coins_collection[i].push({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * y
+        })
+    }
+}
 let coin_counter = 0
 
 var arr = []
@@ -278,6 +294,9 @@ function draw(){
     t1.x += t1.speed;}
     y -= player_jump_speed
     player_jump_speed -= player_acceleration
+
+
+    
     x += x_speed
     if(Math.abs(y - floor) < 10 && player_jump_speed < 0)
     {
@@ -325,6 +344,8 @@ function moveController(ev) {
         }
     } else if (ev.code == 'ArrowDown') {
         console.log('down arrow!');
+        player_jump_speed = -50;
+        player_acceleration = 4;
     } else if (ev.code == 'ArrowLeft') {
         console.log('left arrow!');
         x -= 5;
